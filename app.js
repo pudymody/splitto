@@ -6,12 +6,12 @@ const $people_list = document.querySelector(".people-list > .list");
 $people_list.addEventListener("click", function(e){
 	if( e.target.name === "person-delete" ){
 		e.target.closest(".list-item").remove();
-		const payments = [...$people_list.querySelectorAll(".person")].map( p => ({ name: p.querySelector("[name=name]").value, amnt: parseFloat(p.querySelector("[name=amnt]").value) }) );
+		const payments = [...$people_list.querySelectorAll(".person")].map( p => ({ name: p.querySelector("[name=name]").value, amnt: parseFloat(p.querySelector("[name=amnt]").value) || 0 }) );
 		showMovements(payments);
 	}
 });
 $people_list.addEventListener("input", function(e){
-	const payments = [...$people_list.querySelectorAll(".person")].map( p => ({ name: p.querySelector("[name=name]").value, amnt: parseFloat(p.querySelector("[name=amnt]").value) }) );
+	const payments = [...$people_list.querySelectorAll(".person")].map( p => ({ name: p.querySelector("[name=name]").value, amnt: parseFloat(p.querySelector("[name=amnt]").value) || 0 }) );
 	showMovements(payments);
 });
 $people_list.addEventListener("keyup", function(e){
@@ -32,7 +32,7 @@ $people_add.addEventListener("click", function(e){
 		$all[ $all.length - 1 ].select();
 	}
 
-	const payments = [...$people_list.querySelectorAll(".person")].map( p => ({ name: p.querySelector("[name=name]").value, amnt: parseFloat(p.querySelector("[name=amnt]").value) }) );
+	const payments = [...$people_list.querySelectorAll(".person")].map( p => ({ name: p.querySelector("[name=name]").value, amnt: parseFloat(p.querySelector("[name=amnt]").value) || 0 }) );
 	showMovements(payments);
 })
 
