@@ -1,0 +1,23 @@
+{
+	"name": "Splitto",
+	"short_name": "Splitto",
+	"theme_color": "#fff",
+	"background_color": "#fff",
+	"display": "standalone",
+	"orientation": "portrait",
+	"scope": "/splitto",
+	"start_url": "/splitto",
+	"id": "pudymody.splitto",
+	"icons": [
+		{
+			"src": "favicons/512.png",
+			"type": "image/png",
+			"sizes": "512x512"
+		},
+		{
+			"src": "favicons/192.png",
+			"type": "image/png",
+			"sizes": "192x192"
+		}
+	]
+}
