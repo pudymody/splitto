@@ -5,8 +5,8 @@
 	"background_color": "#fff",
 	"display": "standalone",
 	"orientation": "portrait",
-	"scope": "/splitto",
-	"start_url": "/splitto",
+	"scope": "/splitto/",
+	"start_url": "/splitto/",
 	"id": "pudymody.splitto",
 	"icons": [
 		{

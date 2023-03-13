@@ -78,5 +78,5 @@ function getMovements(payments){
 }
 
 if ('serviceWorker' in navigator) {
-	navigator.serviceWorker.register("sw.js", { scope: "/splitto" });
+	navigator.serviceWorker.register("sw.js", { scope: "/splitto/" });
 }
