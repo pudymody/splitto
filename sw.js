@@ -1,4 +1,4 @@
-const CACHE = 'v2';
+const CACHE = 'v3';
 
 self.addEventListener('install', function (event) {
 	event.waitUntil(
@@ -14,8 +14,11 @@ self.addEventListener('install', function (event) {
 	);
 });
 
-self.addEventListener('fetch', function (event) {
-	// If a match isn't found in the cache, the response
-	// will look like a connection error
-	event.respondWith(caches.match(event.request));
+self.addEventListener('fetch', (event) => {
+	event.respondWith(
+		(async function () {
+			const response = await caches.match(event.request);
+			return response || fetch(event.request);
+		})(),
+	);
 });
